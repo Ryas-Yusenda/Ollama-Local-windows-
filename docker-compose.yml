@@ -14,9 +14,9 @@ services:
     command: >
       sh -c "
         ollama pull llama3 &&
-        ollama pull deepseek-coder-v2 &&
+        ollama pull deepseek-r1:8b &&
         ollama pull gemma2 &&
-        ollama pull llava
+        ollama pull llava:7b
       "
     volumes:
       - ollama-core:/root/.ollama
