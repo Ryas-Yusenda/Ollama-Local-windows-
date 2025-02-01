@@ -10,6 +10,8 @@
 docker-compose up -d
 ```
 
+note: `--force-recreate` flag is used to recreate the container if it already exists.
+
 3. Open browser and navigate to http://localhost:3456.
 
 4. Sign up new account.
