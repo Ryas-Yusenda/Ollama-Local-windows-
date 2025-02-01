@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   ollama:
-    image: ollama/ollama
+    image: ollama/ollama:latest
     container_name: ollama
     deploy:
       resources:
@@ -12,17 +10,17 @@ services:
               count: all
               capabilities: [ gpu ]
     command: >
-      ollama pull llama3 &&
-      ollama pull deepseek-r1:8b &&
+      ollama pull deepseek-r1 &&
+      ollama pull llama3.3 &&
       ollama pull gemma2 &&
-      ollama pull llava:7b
+      ollama pull llava
     volumes:
       - ollama-core:/root/.ollama
     ports:
       - "11434:11434"
     restart: always
 
-  open-webui:
+  ollama-webui:
     image: ghcr.io/open-webui/open-webui:main
     container_name: open-webui
     volumes:
